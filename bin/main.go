@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/suichu/videohead"
+	"github.com/suichu/videohead/mp4"
 )
 
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("videohead [filename]")
+		return
 	}
 
 	f, err := os.Open(os.Args[1])
@@ -18,7 +19,7 @@ func main() {
 	}
 	defer f.Close()
 
-	h, err := videohead.Decode(f)
+	h, err := mp4.Decode(f)
 	if err != nil {
 		panic(err)
 	}

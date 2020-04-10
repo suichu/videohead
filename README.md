@@ -6,7 +6,7 @@ parsing mp4 and extract meta information.
 import (
 	"fmt"
 	"os"
-	"github.com/suichu/videohead"
+	"github.com/suichu/videohead/mp4"
 )
 
 f, err := os.Open("/path/to/any.mp4")
@@ -15,7 +15,7 @@ if err != nil {
 }
 defer f.Close()
 
-h, err := videohead.Decode(f)
+h, err := mp4.Decode(f)
 if err != nil {
   panic(err)
 }

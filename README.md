@@ -22,6 +22,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("width: %dpx height: %dpx\n", h.Size.X, h.Size.Y)
+	fmt.Printf("width: %dpx height: %dpx duration: %dns\n", h.Size.X, h.Size.Y, h.Duration)
 }
 ```
